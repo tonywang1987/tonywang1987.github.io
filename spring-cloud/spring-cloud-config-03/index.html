@@ -1,0 +1,832 @@
+<!DOCTYPE HTML>
+<html lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="极客部落">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.geek666.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="
+精通SpringBootSpringBoot版本： 1.5.19.RELEASE一、Spring Boot概述传统开发方式回顾开发过程
+新建maven工程
+根据项目可能需要的功能集成pom依赖
+需要丰富的开发经验
+自行选择jar包版本
+自行解决jar包版本冲突问题
+
+
+创建spring配置文...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>极客部落</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="极客部落" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?13766878cde148282622871dd245a973";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.geek666.cn">极客部落</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>极客部落</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>并发编程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>网络通信</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>jdk8新特性</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>源码分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>常用中间件</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>spring框架</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>spring boot教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>spring cloud教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories"><i class="fa fa-list"></i>分类</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/about"><i class="fa fa-user"></i>关于我</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="">
+            
+                NO Title!
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/19</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <hr>
+<h2 id="精通SpringBoot"><a href="#精通SpringBoot" class="headerlink" title="精通SpringBoot"></a>精通SpringBoot</h2><pre><code>SpringBoot版本： 1.5.19.RELEASE</code></pre><h2 id="一、Spring-Boot概述"><a href="#一、Spring-Boot概述" class="headerlink" title="一、Spring Boot概述"></a>一、Spring Boot概述</h2><h3 id="传统开发方式回顾"><a href="#传统开发方式回顾" class="headerlink" title="传统开发方式回顾"></a>传统开发方式回顾</h3><h4 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h4><ol>
+<li>新建maven工程</li>
+<li>根据项目可能需要的功能集成pom依赖<ul>
+<li>需要丰富的开发经验</li>
+<li>自行选择jar包版本</li>
+<li>自行解决jar包版本冲突问题</li>
+</ul>
+</li>
+<li>创建spring配置文件（通常为了易于维护，会按照职责范围定义不同的ApplicationContext文件）<ul>
+<li>配置事务切面</li>
+<li>配置日志切面</li>
+<li>配置数据库层</li>
+<li>配置缓存层（可选）</li>
+<li>配置文件服务层</li>
+<li>配置dubbo层（可选）</li>
+<li>配置sms文件</li>
+<li>…（反正就是配置、配置）</li>
+</ul>
+</li>
+<li>创建spring mvc配置文件<ul>
+<li>定义Controller层</li>
+<li>定义异常处理层</li>
+<li>常用的handler拦截器的初始化</li>
+</ul>
+</li>
+<li>配置web.xml文件<ul>
+<li>配置web工程启动监听器类</li>
+<li>配置常用的filter</li>
+<li>配置spring mvc的入口servlet</li>
+</ul>
+</li>
+<li>开发业务功能</li>
+<li>参数调优，生成war包，发布至外部web容器 </li>
+</ol>
+<p><strong>传统方式SSM结构的project如下图所示：</strong></p>
+<p><img src="https://i.imgur.com/nCHzGnk.png" alt></p>
+<p><img src="https://i.imgur.com/9MIEYqZ.png" alt></p>
+<h4 id="面临的问题"><a href="#面临的问题" class="headerlink" title="面临的问题"></a>面临的问题</h4><ol>
+<li>没有一定开发经验的人都不能轻易搭出SSM结构的工程</li>
+<li>配置繁多，需要根据功能初始化相应的组件(spring bean）</li>
+<li>如果需要搭建新工程，都会以先前项目作为模板 ==&gt; 导致项目中包含不必要的引入</li>
+<li>…</li>
+</ol>
+<h3 id="Spring-Boot开发方式"><a href="#Spring-Boot开发方式" class="headerlink" title="Spring Boot开发方式"></a>Spring Boot开发方式</h3><pre><code>以下都是基于Maven方式构建，版本使用的是eclipse自带的3.3.9</code></pre><h4 id="what"><a href="#what" class="headerlink" title="what"></a>what</h4><ul>
+<li>Spring Boot相较于传统方式，可以快速的构建<strong>生产就绪</strong>的基于spring的应用程序。</li>
+<li>Spring Boot内嵌了tomcat容器，用户只需要jar -jar运行应用即可。</li>
+</ul>
+<h4 id="why"><a href="#why" class="headerlink" title="why"></a>why</h4><ul>
+<li>快速构建spring应用程序</li>
+<li>开箱即用</li>
+<li>提供丰富特性：内嵌服务器、metrics、健康检查、外部化配置等</li>
+<li>无需XML配置</li>
+</ul>
+<h4 id="how"><a href="#how" class="headerlink" title="how"></a>how</h4><ul>
+<li><p>引入spring-boot-starter-parent</p>
+<h2 id><a href="#" class="headerlink" title="#"></a>#</h2>  <parent>
+      <groupid>org.springframework.boot</groupid>
+      <artifactid>spring-boot-starter-parent</artifactid>
+      <version>1.5.19.RELEASE</version>
+  </parent>
+</li>
+<li><p>配置maven构建插件（打包成可执行jar）</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h2>  <build>
+      <plugins>
+      <plugin>
+      <groupid>org.springframework.boot</groupid>
+      <artifactid>spring-boot-maven-plugin</artifactid>
+      </plugin>
+      </plugins>
+  </build>
+</li>
+<li><p>如果需要开发web工程，则引入spring-boot-starter-web</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title="#"></a>#</h2>  <dependencies>
+      <dependency>
+      <groupid>org.springframework.boot</groupid>
+      <artifactid>spring-boot-starter-web</artifactid>
+      </dependency>
+  </dependencies>
+</li>
+<li><p>编写应用启动器</p>
+<h2 id="-3"><a href="#-3" class="headerlink" title="#"></a>#</h2><p>  @SpringBootApplication</p>
+<pre><code>public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}</code></pre></li>
+</ul>
+<ul>
+<li>ssm工程搭建完毕</li>
+</ul>
+<h3 id="Spring-Boot带来的挑战"><a href="#Spring-Boot带来的挑战" class="headerlink" title="Spring Boot带来的挑战"></a>Spring Boot带来的挑战</h3><ol>
+<li>Spring Boot采用注解方式的配置Bean（传统习惯使用xml方式配置）</li>
+<li>如果要熟练使用，那么对ssm工作机制都要熟练于心</li>
+<li>开发中碰到问题不好排查</li>
+</ol>
+<h3 id="如何应对这些挑战"><a href="#如何应对这些挑战" class="headerlink" title="如何应对这些挑战"></a>如何应对这些挑战</h3><h4 id="Spring基础回顾"><a href="#Spring基础回顾" class="headerlink" title="Spring基础回顾"></a>Spring基础回顾</h4><ol>
+<li><p>Spring注解开发</p>
+<ul>
+<li>注解三剑客<ul>
+<li>@Configuration</li>
+<li>@Bean</li>
+<li>@ComponentScan</li>
+</ul>
+</li>
+<li>向Spring容器中添加组件<ul>
+<li>包扫描 + 组件标注注解（@Controller/@Service/@Component/@Repository）</li>
+<li>@Bean（导入第三方包中的类）</li>
+<li>@Import</li>
+<li>使用spring提供的FactoryBean注册bean</li>
+</ul>
+</li>
+<li>bean生命周期管理<ul>
+<li>创建 –&gt; 初始化 –&gt; 销毁</li>
+<li>几种管理方式<ul>
+<li>@Bean注解 指定初始化initMethod 和 销毁方法destoryMethod</li>
+<li>通过让bean实现InitializingBean（实现初始化逻辑） 及 DisposableBean（实现销毁逻辑）</li>
+<li>使用JSR250规范: @PostConstruct、@PreDestroy</li>
+<li>实现BeanPostProcessor [bean后置处理器]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何读取配置文件<ul>
+<li>注解方式<ul>
+<li>@PropertySource加载配置文件，如果是多个使用@PropertySources注解</li>
+<li>@Value</li>
+</ul>
+</li>
+<li>编码方式<ul>
+<li>applicationContext.getEnvironment() –&gt; ConfigurableEnvironment –&gt; getProperty(“app.name”) </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bean的自动装配<ul>
+<li>@Autowired [Spring规范，推荐]<ul>
+<li>优先根据类型去装配</li>
+<li>如果有多个此类型的实现类，那么按照 属性名 作为 bean name去匹配</li>
+<li>通过@Qualifier(“beanID”)去指定具体装配的bean实例</li>
+<li>默认情况下，@Autowired注解标注的属性，必须要装配，否则会报错. @Autowired(required=false)表示如果没有匹配的则不用去匹配</li>
+<li>作用域<ul>
+<li>方法</li>
+<li>构造器（如果构造器只有一个参数，那么@Autowired注解可以省略，组件在初始化时，spring会自动注入构造器中的参数）</li>
+<li>属性</li>
+<li>方法参数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>@Primary ==&gt; 与@Bean注解配合使用，标注当前bean为自动装配时首选的bean，则缺省情况下会装配当前bean</li>
+<li>@Qualifier ==&gt; 指定装配的具体bean实例</li>
+<li>JSR250规范<ul>
+<li>@Resource</li>
+<li>@Inject</li>
+</ul>
+</li>
+<li>实现xxxAware接口，完成xxx的注入</li>
+<li>@Profile ==&gt; 指定当前适用的环境<ul>
+<li>激活方式<ul>
+<li>运行时参数： spring.profiles.active=prod</li>
+<li>applicationContext.getEnvironment().setActiveProfiles(“test”)  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>面向切面编程（AOP）<ul>
+<li>在程序运行期间动态的将某段代码切入到指定方法指定位置进行运行的编程方式</li>
+<li>实现机制 =&gt; 动态代理 </li>
+<li>通知方法<ul>
+<li>前置通知(@Before)</li>
+<li>后置通知(@After)</li>
+<li>返回通知(@AfterReturning)</li>
+<li>异常通知(@AfterThrowing)</li>
+<li>如果需要通过编码方式，控制前、后等 ==&gt; 环绕通知(@Around)</li>
+</ul>
+</li>
+<li>实现步骤<ul>
+<li>定义切面类（在Class上添加注解@Aspect）</li>
+<li>在切面类中定义切入点表达式@PointCut(“execution(public * com.binbin.*(..))”)</li>
+<li>在切面类中 的目标方法 标注 通知注解</li>
+<li>在配置类中开启使用aop注解 =&gt; @EnableAspectJAutoProxy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring常用扩展点</p>
+<ul>
+<li>Aware接口<ul>
+<li>ApplicationContextAware</li>
+<li>BeanClassLoaderAware</li>
+<li>EnvironmentAware</li>
+<li>BeanFactoryAware </li>
+<li>ServletConfigAware</li>
+</ul>
+</li>
+<li>InitializingBean接口和DisposableBean接口</li>
+<li>ImportBeanDefinitionRegistrar接口</li>
+<li>BeanPostProcessor接口</li>
+<li>BeanFactoryPostProcessor接口</li>
+<li>FactoryBean接口</li>
+<li>ApplicationListener接口<h4 id="Spring-Boot开发详解"><a href="#Spring-Boot开发详解" class="headerlink" title="Spring Boot开发详解"></a>Spring Boot开发详解</h4></li>
+</ul>
+</li>
+<li><p>Spring Boot启动类注解@SpringBootApplication源码</p>
+</li>
+<li><p>Spring Boot配置文件application.properties / application.yml介绍</p>
+</li>
+<li><p>Spring Boot加载配置文件</p>
+<ul>
+<li>@ConfigurationProperties</li>
+<li>@Value</li>
+<li>指定配置文件<ul>
+<li>@PropertySource(“classpath:jdbc.properties”) +  @Value</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring Boot外部化配置</p>
+<ul>
+<li>默认加载 <ul>
+<li>classpath:application.properties/classpath:application.yml</li>
+<li>classpath:/config/application.properties 或 classpath:/config/application.yml</li>
+<li>file:/application.properties 或 file:/application.yml</li>
+<li>file:/config/application.properties 或 file:/config/application.yml</li>
+</ul>
+</li>
+<li>加载顺序<ul>
+<li><strong>file:/config</strong> &gt; <strong>file:/</strong> &gt; <strong>classpath:/config</strong>  &gt; <strong>classpath:</strong> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>动态加载配置文件</p>
+<ul>
+<li>实现接口EnvironmentPostProcessor =&gt; postProcessEnvironment</li>
+<li>META-INF/spring.factories中注册新建的Processor</li>
+</ul>
+</li>
+<li><p>多环境配置</p>
+<ul>
+<li>运行参数指定 spring.profiles.active</li>
+<li>在application.properties指定 spring.profiles.active=dev</li>
+</ul>
+</li>
+<li><p>过滤器/拦截器/AOP</p>
+<ul>
+<li><p>过滤器</p>
+<ul>
+<li>Filter是依赖于Servlet容器，属于Servlet规范的一部分</li>
+<li>Filter的执行由Servlet容器回调完成</li>
+<li>Filter的生命周期由Servlet容器管理</li>
+<li>开发方式<ul>
+<li>传统SSM架构<ul>
+<li>在web.xml中，配置过滤器</li>
+</ul>
+</li>
+<li>Spring Boot方式<ul>
+<li>使用注解 @WebFilter 与 @ServletComponentScan 配合使用【@WebFilter是Servlet3.0规范】  </li>
+<li>通过FilterRegistrationBean完成注册（@Configuration注解类中）【spring boot没有web.xml，所以需要通过注册类将过滤器注册到容器中】</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>拦截器</p>
+<ul>
+<li><p>拦截器独立于web容器，可以在任何情况下使用</p>
+</li>
+<li><p>拦截器通常通过动态代理的方式来执行</p>
+</li>
+<li><p>开发方式</p>
+<ul>
+<li><p>继承HandlerInterceptorAdapter 或者 实现HandlerInterceptor接口</p>
+</li>
+<li><p>实现拦截业务逻辑</p>
+<ul>
+<li>preHandle</li>
+<li>postHandle</li>
+<li>afterCompletion</li>
+</ul>
+</li>
+<li><p>注册拦截器</p>
+<ul>
+<li><p>传统SSM架构（基于xml）    </p>
+<h2 id="-4"><a href="#-4" class="headerlink" title="#"></a>#</h2><pre><code>&lt;mvc:interceptors&gt;
+    &lt;mvc:interceptor&gt;
+        &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+        &lt;bean class=&quot;com.sdusz.framework.web.session.interceptor.RequestInterceptor&quot;&gt;
+            &lt;property name=&quot;userSessionkey&quot; value=&quot;userinfo&quot;&gt;&lt;/property&gt;
+        &lt;/bean&gt;
+    &lt;/mvc:interceptor&gt;
+&lt;/mvc:interceptors&gt;</code></pre></li>
+<li><p>Spring Boot方式</p>
+<ul>
+<li><p>继承WebMvcConfigurerAdapter，并覆写addInterceptors，来完成拦截器注册<br>  #### </p>
+<pre><code>@Configuration
+@ComponentScan(basePackages = { &quot;com.sdusz.framework.thirdlogin&quot; })
+public class InterceptorRegistryConfig extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        registry.addInterceptor(new BootHandlerInterceptor());
+    }
+
+    @Bean
+    public SpringContextHolder springContextHolder() {
+
+        return new SpringContextHolder();
+    }
+
+}</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>AOP</p>
+<ul>
+<li>过滤器 / 拦截器 都是基于web请求的拦截</li>
+<li>AOP可以实现基于类或者接口方法的拦截【与是否是web无关】</li>
+<li>开发方式： 参照上面spring基础部分</li>
+</ul>
+</li>
+<li><p>filter/interceptor/aop</p>
+<ul>
+<li>对比<ul>
+<li>filter是servlet规范，拦截的是web url请求，因此它不能获取到Spring相关调用信息，比如Controller，方法及参数等</li>
+<li>interceptor是基于spring实现的，因此其可以获取到调用类、调用方法及调用参数的类型定义，但是无法获取参数值</li>
+<li>aop可以拦截到方法的参数内容</li>
+</ul>
+</li>
+<li>顺序<ul>
+<li>过滤器 &gt; 拦截器（HandlerInterceptor）&gt; AOP切面 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring Boot异常处理</p>
+<ul>
+<li>基于@ControllerAdvice（可指定特定包） + @ExceptionHandler 组合</li>
+<li>实现HandlerExceptionResolver接口（全局）</li>
+</ul>
+</li>
+<li><p>如何编写起步依赖starter工程</p>
+<ul>
+<li><p>自动装配实现机制</p>
+<ul>
+<li>@Configuration</li>
+<li>@Conditional<ul>
+<li>ConditionalOnBean（spring已装配某个bean时，则当前bean也自动装配）</li>
+<li>ConditionalOnMissingBean（spring未装配某个bean时，则当前bean也自动装配）</li>
+<li>ConditionalOnClass（当前classpath下有这个类的依赖时，则当前bean也自动装配）</li>
+<li>ConditionalOnMissingClass（当前classpath下无这个类的依赖时，则当前bean也自动装配）</li>
+<li>ConditionalOnExpression（当SpEL表达式返回true时，自动装配当前bean）</li>
+<li>ConditionalOnProperty（当配置文件中属性存在 或 等于某个值时，自动装配bean）</li>
+<li>ConditionalOnResource（当某个资源存在时，则装配bean）</li>
+<li>conditionConditionalOnWebApplication（是web环境时装配bean）</li>
+<li>ConditionalOnNotWebApplication（非web环境时装配bean）</li>
+<li>ConditionalOnJava（当前jvm的版本号满足条件时，装配bean）</li>
+</ul>
+</li>
+<li>添加默认配置项：@ConfigurationProperties + @EnableConfigurationProperties</li>
+</ul>
+</li>
+<li><p>命名规范约束</p>
+<ul>
+<li>spring官方<ul>
+<li>spring-boot-xxx-starter</li>
+</ul>
+</li>
+<li>自己开发的起步依赖<ul>
+<li>xxx-spring-boot-starter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>添加依赖</p>
+<h2 id="-5"><a href="#-5" class="headerlink" title="#"></a>#</h2><pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-autoconfigure&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;</code></pre></li>
+<li><p>starter起步依赖工程中添加文件 META-INF/spring.factories</p>
+<ul>
+<li>配置org.springframework.boot.autoconfigure.EnableAutoConfiguration</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>发布工程</p>
+<ul>
+<li>可执行jar方式（默认方式）</li>
+<li>传统部署方式，比如部署至外部tomcat<ul>
+<li>参考  《spring-boot-reference.pdf》文档86节：Traditional deployment</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/1.5.17.RELEASE/reference/html/" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/1.5.17.RELEASE/reference/html/</a></li>
+<li><a href="https://docs.spring.io/spring/docs/4.3.24.RELEASE/spring-framework-reference/htmlsingle/" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/4.3.24.RELEASE/spring-framework-reference/htmlsingle/</a></li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div class="col-sm-10">
+            <div>
+                <b>本文链接</b>：<a href="/spring-cloud/spring-cloud-config-03/"></a>
+            </div>
+            <div>
+                
+                    转载声明：本博客由周立创作，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank"> CC BY 3.0 CN </a> 许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。
+                
+            </div>
+            <div>
+                
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <img src="/icons/wx.jpg" width=100%/>
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/spring-cloud/spring-cloud-config-02/" class="next-post btn btn-default" title=''>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+   <p>评论系统未开启，无法评论！</p>
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜你所想">
+                    <button type="button" class="search-form-submit" id="search-local">搜一搜</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+        <h3 class="title">公告</h3>
+        <div class="notification">
+            <p>
+  <b>笔者微信</b>：jumping_me，欢迎加我<br/>
+  <b>公众号</b>：请扫描我的头像<br/>
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/eacdy" rel="external nofollow" title="GitHub" target="_blank">
+			    	<i class="github fa fa-github"></i>
+			    </a>
+            
+	            <a href="//gitee.com/itmuch" rel="external nofollow" title="Git@OSC" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:eacdy0000@126.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友情链接</h3>
+        <div class="content friends-link">
+        
+            <a href="http://www.geek666.cn/spring-cloud/spring-cloud-config-03/index.html" class="fa" target="_blank"></a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2016
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/itmuch/hexo-theme-itmuch.git" class="copyright-links" target="_blank" rel="nofollow">ITMuch</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
